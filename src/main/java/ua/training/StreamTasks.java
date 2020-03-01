@@ -25,9 +25,10 @@ public class StreamTasks {
         }
 
         // task 2: Найти минимальный элемент и вернуть значение и индекс (одновременно)
-        System.out.println("Task 2 (min): " + Arrays.stream(arr).min().getAsInt() + ", index: " + IntStream.range(0, arr.length)
+        int indexOfMin = IntStream.range(0, arr.length)
                 .reduce((i, j) -> arr[i] > arr[j] ? j : i)
-                .getAsInt());
+                .getAsInt();
+        System.out.println("Task 2 (index of min): " + indexOfMin + ", value: " + arr[indexOfMin]);
 
         // task 3: Посчитать количество элементов равных нулю
         System.out.println("Task 3 (count of elements = 0): " + Arrays.stream(arr).filter((x) -> x == 0).count());
